@@ -7,20 +7,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ShopStop</title>
   
-  <link rel="stylesheet" type="text/css" href="../../content/styles/site.css" />
-   <link rel='shortcut icon' type='image/x-icon' href='../../content/images/favicon.ico' />
+  <link rel="stylesheet" type="text/css" href="/content/styles/site.css" />
+   <link rel='shortcut icon' type='image/x-icon' href='/content/images/favicon.ico' />
 </head>
 <body>
   <header>
     <nav class="nav">
       <ul>
         <li><a href="/">Home Page</a></li>
-        <li><a href="/product/add">Add Product</a></li>
+        <li><a href="/products/add">Add Product</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <h1 class="head-title">Welcome to ShopStop!</h1>
+	<h1 class="head-title">Welcome to ShopStop!</h1>
+	
+	<div class="cards">
+		{content}
+	</div>
   </main>
   <footer>
     <p>&copy; ShopStop</p>

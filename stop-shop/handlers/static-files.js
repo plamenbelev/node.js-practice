@@ -36,5 +36,7 @@ module.exports = (req, res) => {
 			res.write(data);
 			res.end();
 		});
+	} else {
+		return true;
 	}
 };

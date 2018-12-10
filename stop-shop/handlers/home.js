@@ -1,12 +1,15 @@
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
+let database = require('../config/database');
+
+
+
 
 module.exports = (req, res) => {
 	req.pathname = req.pathname || url.parse(req.url).pathname;
 
 	if (req.pathname === '/' && req.method === 'GET') {
-		// "path" module is just utility for editing file paths
 		let filePath = path.normalize(
 			path.join(__dirname, '../views/home/index.html'));
 
@@ -16,7 +19,6 @@ module.exports = (req, res) => {
 				res.writeHead(404, {
 					'Content-Type': 'text/plain'
 				});
-
 				res.write('404 Not found!');
 				res.end();
 				return;
@@ -25,8 +27,10 @@ module.exports = (req, res) => {
 			res.writeHead(200, {
 				'Content-Type': 'text/html'
 			});
+			
 			res.write(data);
 			res.end();
+			return;
 		});
 	} else {
 		return true;
